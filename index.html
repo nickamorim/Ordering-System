@@ -5,53 +5,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Order System, Online Order Software">
-  <meta name="author" content="Nicholas Amorim, William Suriputra">
-
+  <meta name="author" content="Nicholas Amorim">
   <title>Epcior | Welcome</title>
-
   <!-- Bootstrap core CSS -->
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Custom styles for this template -->
   <link href="style.css" rel="stylesheet">
-
   <!-- Linking jQuery library -->
   <script src="jquery-3.2.1.js"></script>
-
   <!-- Bootstrap core JavaScript -->
   <script src="bootstrap/js/bootstrap.min.js"></script>
-
 </head>
+
 <body>
 
   <div class="site-wrapper">
-
     <div class="site-wrapper-inner">
-
       <div class="cover-container">
-
         <div class="masthead clearfix">
           <div class="inner">
-            <h3 class="masthead-brand">Epicor</h3>
+            <h3 class="masthead-brand">Welcome,</h3>
           </div>
         </div>
 
         <div class="inner cover">
           <h1 class="cover-heading">Epicor Ordering System</h1>
-          <p class="lead">Please select 'Start Order' to proceed ordering your pizza</p>
+          <p class="lead">Select 'Start Order' to proceed.</p>
           <!-- Bootstrap Dropdown Menu list-->
           <div class="dropdown">
             <button id="x" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Start Order</button>
             <ul class="dropdown-menu" id="parent-list">
-              <li><a href="#">test1</a></li>
-              <li><a href="#">test2</a></li>
-              <li><a href="#">test3</a></li>
+              <li><a href="#">Pepperoni Pizza</a></li>
+              <li><a href="#">Vegetarian Pizza</a></li>
+              <li><a href="#">Meatlovers Pizza</a></li>
             </ul>
           </div>
          </div>
 
          <!-- jQuery displaying data to back-end -->
-         
         <script type="text/javascript">
           $('#parent-list > li > a').on('click', function(){  
             alert(this.innerHTML);
@@ -68,14 +59,11 @@
 
         <div class="mastfoot">
           <div class="inner">
-            <p>Made by Nicholas A. & William S. | <a href="https://www.github.com/x1">Github</a>.</p>
+            <p>Developed by Nicholas | <a href="https://github.com/nickamorim/order-system">Github Repository</a></p>
           </div>
         </div>
-
       </div>
-
     </div>
-
   </div>
 </body>
 </html>

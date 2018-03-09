@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 app.get('/api/:msg', function (req, res) {
-  console.log('got message: ' + req.params.msg)
+  console.log('User Order: ' + req.params.msg)
   res.sendStatus(200)
 })
 

@@ -1,0 +1,64 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='Order System, Online Order Software')
+    meta(name='author', content='Nicholas Amorim')
+
+    title Epcior | Welcome
+
+    link(rel='shortcut icon' type='image/x-icon' href='/fonts/favicon.ico')
+    link(href='/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/css/main.css', rel='stylesheet')
+    script(src='/vendor/jquery-2.2.3.min.js')
+    script(src='/vendor/jquery.form.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/views/home.js')
+    script(src='/js/controllers/homeController.js')
+    script(src='/js/form-validators/accountValidator.js')
+
+  body
+      .navbar-btn#btn-logout.btn.btn-default
+        | Sign Out
+      .navbar-btn#btn-acctsettings.btn.btn-default(onclick="window.open('/home', '_self');")
+        | Account Settings
+
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          .masthead.clearfix
+            .inner
+              h3.masthead-brand Welcome,
+          .inner.cover
+            h1.cover-heading Epicor Ordering System
+            p.lead Select 'Start Order' to proceed...
+            // Bootstrap Dropdown Menu list
+            .dropdown
+              button#x.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown') Start Order
+              ul#parent-list.dropdown-menu
+                li
+                  a(href='#') Pepperoni Pizza
+                li
+                  a(href='#') Vegetarian Pizza
+                li
+                  a(href='#') Meatlovers Pizza
+          // jQuery displaying data to back-end
+          script(type='text/javascript').
+            $('#parent-list > li > a').on('click', function(){
+              alert(this.innerHTML);
+              $.ajax({
+                method: "GET",
+                url: "http://localhost:5000/main#" + this.innerHTML,
+                crossDomain: true
+              })
+              .done(function( msg ) {
+                console.log( "Data Saved: " + msg );
+              });
+            });
+          .mastfoot
+            .inner
+              p
+                | Developed by Nicholas 
+                a(href='https://github.com/nickamorim/order-system' target='_blank') | Github Repository
